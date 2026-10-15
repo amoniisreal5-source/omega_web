@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AMONI ISREAL ENGINEERING — electrical and electronic engineering services, power solutions, maintenance, and electrical product enquiries in Lagos, Nigeria.">
+  <meta name="theme-color" content="#0b1730">
+  <title>AMONI ISREAL ENGINEERING | Powering a Brighter Future</title>
+  <style>
+    :root{--navy:#0b1730;--navy2:#102447;--blue:#1677ff;--cyan:#37d7ff;--ink:#172338;--muted:#66758b;--paper:#f4f7fb;--white:#fff;--line:#e1e8f1;--shadow:0 18px 48px rgba(11,23,48,.12);--radius:22px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--white);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button,input,select,textarea{font:inherit}
+    button,a,input,select,textarea{outline-offset:4px}
+    :focus-visible{outline:3px solid var(--cyan)}
+    .container{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+    .section{padding:92px 0}
+    .section-soft{background:var(--paper)}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue);font-weight:800;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:25px;height:2px;background:var(--cyan)}
+    h1,h2,h3{line-height:1.15;letter-spacing:-.035em}
+    h2{font-size:clamp(2rem,4vw,3.15rem);color:var(--navy);margin:14px 0}
+    .section-intro{max-width:680px;color:var(--muted);font-size:1.04rem}
+    .section-head{margin-bottom:38px}
+    .section-head.center{text-align:center;margin-inline:auto}
+    .section-head.center .section-intro{margin-inline:auto}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid transparent;border-radius:999px;padding:13px 21px;font-weight:800;cursor:pointer;transition:transform .22s,box-shadow .22s,background .22s;color:var(--white);background:var(--blue)}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(22,119,255,.24)}
+    .btn-outline{background:transparent;border-color:rgba(255,255,255,.38);color:var(--white)}
+    .btn-dark-outline{background:transparent;border-color:var(--line);color:var(--navy)}
+    .btn-cyan{background:var(--cyan);color:var(--navy)}
+    .btn-small{padding:9px 15px;font-size:.9rem}
+    .topbar{background:#061022;color:#c9d5e8;font-size:.83rem;padding:8px 0}
+    .topbar-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .topbar a:hover{color:var(--cyan)}
+    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(225,232,241,.8)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:11px;min-width:0}
+    .brand-mark{width:43px;height:43px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--cyan));color:var(--navy);font-weight:1000;font-size:1.15rem;border-radius:13px;box-shadow:0 7px 18px #1677ff33}
+    .brand-text{display:flex;flex-direction:column;line-height:1.1}
+    .brand-text strong{font-size:.96rem;color:var(--navy);letter-spacing:.015em}
+    .brand-text small{font-size:.7rem;color:var(--muted);margin-top:5px;letter-spacing:.08em;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:23px}
+    .nav-links a{font-size:.9rem;font-weight:700;color:#40506a;transition:color .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--blue)}
+    .nav-cta{white-space:nowrap}
+    .menu-toggle{display:none;background:transparent;border:0;color:var(--navy);font-size:1.7rem;cursor:pointer;padding:6px}
+    .hero{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(circle at 78% 32%,#153d71 0,#102447 28%,#0b1730 66%);color:white;min-height:650px;display:flex;align-items:center}
+    .hero:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.22;background-image:linear-gradient(rgba(55,215,255,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(55,215,255,.16) 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(90deg,black,transparent)}
+    .hero:after{content:"";position:absolute;width:480px;height:480px;border:1px solid #37d7ff40;border-radius:50%;right:5%;top:12%;box-shadow:0 0 0 40px #37d7ff0b,0 0 0 85px #37d7ff08;z-index:-1;animation:orbit 24s linear infinite}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:42px;padding:76px 0}
+    .hero .eyebrow{color:var(--cyan)}
+    .hero h1{font-size:clamp(2.8rem,5.6vw,5.1rem);max-width:760px;margin:19px 0 22px;animation:rise .8s both}
+    .hero h1 span{color:var(--cyan)}
+    .hero-copy{font-size:1.08rem;color:#d0dced;max-width:610px;animation:rise .9s .1s both}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;animation:rise .9s .2s both}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:28px;color:#b7c6db;font-size:.88rem}
+    .hero-meta span{display:flex;align-items:center;gap:8px}
+    .hero-meta b{color:var(--cyan)}
+    .hero-art{position:relative;min-height:390px;display:grid;place-items:center;animation:rise 1s .15s both}
+    .power-orb{width:min(360px,80vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle at 50% 50%,#1677ff22 0 32%,transparent 33%),radial-gradient(circle,#163f70 0,#0d2445 55%,#0b1730 70%);border:1px solid #37d7ff55;box-shadow:inset 0 0 45px #37d7ff14,0 0 65px #1677ff20}
+    .power-orb:before,.power-orb:after{content:"";position:absolute;inset:10%;border:1px dashed #37d7ff65;border-radius:50%;animation:orbit 28s linear infinite}
+    .power-orb:after{inset:20%;border-style:solid;border-color:#1677ff80;animation-direction:reverse;animation-duration:18s}
+    .bolt{font-size:8rem;color:var(--cyan);filter:drop-shadow(0 0 25px #37d7ff90);animation:pulse 2.8s ease-in-out infinite}
+    .float-tag{position:absolute;padding:12px 15px;background:#102447dd;border:1px solid #37d7ff55;border-radius:14px;color:#eaf8ff;backdrop-filter:blur(8px);font-size:.85rem;box-shadow:0 14px 28px #0003;animation:float 5s ease-in-out infinite}
+    .float-tag strong{display:block;color:var(--cyan);font-size:1rem}
+    .tag-one{top:12%;right:0}.tag-two{bottom:10%;left:0;animation-delay:-2s}
+    .trust-strip{background:white;border-bottom:1px solid var(--line)}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:24px 0}
+    .trust-item{display:flex;gap:12px;align-items:center}
+    .trust-icon{width:43px;height:43px;border-radius:13px;background:#eaf6ff;color:var(--blue);display:grid;place-items:center;font-size:1.3rem;flex-shrink:0}
+    .trust-item strong{display:block;font-size:.92rem;color:var(--navy)}
+    .trust-item small{display:block;color:var(--muted);font-size:.8rem}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+    .about-visual{min-height:410px;border-radius:28px;overflow:hidden;position:relative;background:linear-gradient(145deg,#0b1730,#163d6c);display:grid;place-items:center;padding:35px}
+    .about-visual:before{content:"";position:absolute;inset:20px;border:1px solid #37d7ff60;border-radius:20px}
+    .about-visual .circuit{font-size:8rem;color:var(--cyan);filter:drop-shadow(0 0 25px #37d7ff70)}
+    .about-label{position:absolute;bottom:35px;left:35px;right:35px;padding:17px;background:#07152bd9;border:1px solid #37d7ff4d;border-radius:14px;color:#d7e5f8}
+    .about-label strong{display:block;color:white;font-size:1.06rem}
+    .about-content p{color:var(--muted);margin:14px 0}
+    .check-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:23px 0}
+    .check-list li{display:flex;gap:9px;align-items:flex-start;font-weight:700;font-size:.91rem}
+    .check-list li:before{content:"✓";color:var(--blue);font-weight:1000}
+    .service-grid,.product-grid,.project-grid,.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .service-card,.product-card,.project-card,.value-card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:25px;transition:transform .25s,box-shadow .25s,border-color .25s}
+    .service-card:hover,.product-card:hover,.project-card:hover,.value-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#b7ddff}
+    .service-icon{width:54px;height:54px;border-radius:16px;background:linear-gradient(135deg,#e7f3ff,#e5fbff);display:grid;place-items:center;font-size:1.65rem;margin-bottom:21px}
+    .service-card h3,.value-card h3{font-size:1.14rem;color:var(--navy);margin-bottom:11px}
+    .service-card p,.value-card p{font-size:.92rem;color:var(--muted);margin-bottom:18px}
+    .text-link{font-weight:800;color:var(--blue);font-size:.91rem}
+    .text-link:hover{text-decoration:underline}
+    .notice{border:1px solid #cfe5ff;background:#eef7ff;border-radius:14px;padding:15px 17px;color:#37526f;font-size:.9rem;margin-top:24px}
+    .shop-toolbar{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:25px}
+    .filter-row{display:flex;flex-wrap:wrap;gap:8px}
+    .filter-btn{border:1px solid var(--line);background:white;color:#506078;border-radius:999px;padding:8px 14px;font-size:.85rem;font-weight:750;cursor:pointer}
+    .filter-btn.active,.filter-btn:hover{background:var(--navy);color:white;border-color:var(--navy)}
+    .cart-pill{display:inline-flex;align-items:center;gap:9px;background:var(--navy);color:white;padding:10px 15px;border-radius:999px;font-weight:800}
+    .product-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+    .product-art{height:170px;display:grid;place-items:center;background:linear-gradient(135deg,#eaf4ff,#f5fbff);font-size:4rem;position:relative;overflow:hidden}
+    .product-art:after{content:"";position:absolute;width:160px;height:160px;border:1px solid #1677ff18;border-radius:50%;box-shadow:0 0 0 22px #1677ff08,0 0 0 45px #1677ff05}
+    .sample-tag{position:absolute;top:12px;left:12px;background:#fff;color:#52637b;font-size:.69rem;font-weight:850;text-transform:uppercase;letter-spacing:.08em;border-radius:7px;padding:5px 8px;z-index:1}
+    .product-body{padding:20px;display:flex;flex-direction:column;flex:1}
+    .product-category{font-size:.72rem;color:var(--blue);font-weight:850;text-transform:uppercase;letter-spacing:.1em}
+    .product-body h3{font-size:1.12rem;color:var(--navy);margin:8px 0}
+    .product-body p{font-size:.88rem;color:var(--muted);flex:1}
+    .price{font-size:1.25rem;color:var(--navy);font-weight:900;margin:16px 0}
+    .product-actions{display:flex;gap:8px;flex-wrap:wrap}
+    .product-actions .btn{flex:1;padding:10px 12px;font-size:.82rem}
+    .product-actions .btn-dark-outline{border-color:#d6e0ec}
+    .quantity{width:75px;padding:8px;border:1px solid var(--line);border-radius:9px;margin-bottom:12px}
+    .cart-panel{margin-top:30px;border:1px solid var(--line);border-radius:var(--radius);background:white;padding:25px;box-shadow:0 10px 30px #0b173008}
+    .cart-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:15px}
+    .cart-head h3{color:var(--navy);font-size:1.3rem}
+    .cart-empty{color:var(--muted);padding:16px 0}
+    .cart-row{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:14px;border-top:1px solid var(--line);padding:13px 0}
+    .cart-row strong{display:block;color:var(--navy)}
+    .cart-row small{color:var(--muted)}
+    .cart-row input{width:65px;padding:7px;border:1px solid var(--line);border-radius:8px}
+    .remove-btn{background:none;border:0;color:#c0394b;font-weight:800;cursor:pointer}
+    .cart-total{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:18px;margin-top:10px;font-size:1.1rem;font-weight:900;color:var(--navy)}
+    .cart-checkout{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .project-card{padding:0;overflow:hidden}
+    .project-art{height:170px;background:linear-gradient(135deg,#0b1730,#194777);display:grid;place-items:center;color:var(--cyan);font-size:3.5rem}
+    .project-body{padding:22px}
+    .project-body small{color:var(--blue);font-weight:850;text-transform:uppercase;letter-spacing:.08em}
+    .project-body h3{margin:8px 0;color:var(--navy);font-size:1.15rem}
+    .project-body p{color:var(--muted);font-size:.9rem}
+    .value-card{padding:22px}
+    .value-card .service-icon{margin-bottom:16px}
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start}
+    .contact-info{background:var(--navy);color:white;border-radius:var(--radius);padding:30px;position:relative;overflow:hidden}
+    .contact-info:after{content:"";position:absolute;width:220px;height:220px;border:1px solid #37d7ff30;border-radius:50%;right:-100px;bottom:-100px;box-shadow:0 0 0 25px #37d7ff08,0 0 0 50px #37d7ff05}
+    .contact-info h3{font-size:1.55rem;margin:10px 0 12px}
+    .contact-info>p{color:#c3d1e5;font-size:.93rem;margin-bottom:25px}
+    .contact-detail{display:flex;gap:13px;padding:14px 0;border-top:1px solid #ffffff1c;position:relative;z-index:1}
+    .contact-detail .ico{width:40px;height:40px;flex-shrink:0;display:grid;place-items:center;background:#ffffff12;border-radius:12px;color:var(--cyan)}
+    .contact-detail small{display:block;color:#9fb1ca;font-size:.76rem}
+    .contact-detail a,.contact-detail strong{font-size:.93rem;overflow-wrap:anywhere}
+    .contact-detail a:hover{color:var(--cyan)}
+    .contact-actions{display:grid;gap:10px;margin-top:20px;position:relative;z-index:1}
+    .form-card{border:1px solid var(--line);border-radius:var(--radius);padding:30px;background:white;box-shadow:0 12px 35px #0b173008}
+    .form-card h3{font-size:1.55rem;color:var(--navy);margin-bottom:8px}
+    .form-card>p{color:var(--muted);font-size:.91rem;margin-bottom:22px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .field{display:flex;flex-direction:column;gap:7px}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:.85rem;font-weight:800;color:#33445d}
+    .field input,.field select,.field textarea{width:100%;border:1px solid #d7e0eb;border-radius:11px;padding:12px 13px;color:var(--ink);background:#fbfdff}
+    .field textarea{min-height:125px;resize:vertical}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);outline:3px solid #1677ff18}
+    .consent{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:.83rem;margin:18px 0}
+    .consent input{margin-top:5px;accent-color:var(--blue)}
+    .form-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .form-note{font-size:.82rem;color:var(--muted);margin-top:14px}
+    .map-placeholder{margin-top:26px;border:1px dashed #b9cce2;border-radius:16px;min-height:120px;display:grid;place-items:center;text-align:center;padding:20px;color:var(--muted);background:#f9fbfe}
+    .map-placeholder strong{display:block;color:var(--navy)}
+    .footer{background:#061022;color:#c4d0e2;padding:65px 0 22px}
+    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:32px;padding-bottom:40px}
+    .footer .brand-text strong{color:white}
+    .footer .brand-text small{color:#98aac2}
+    .footer-about p{font-size:.9rem;color:#9eafc7;margin:18px 0;max-width:300px}
+    .footer h3{font-size:1rem;color:white;margin-bottom:17px;letter-spacing:0}
+    .footer-links{display:grid;gap:10px}
+    .footer-links a{font-size:.88rem;color:#aab9cd}
+    .footer-links a:hover{color:var(--cyan)}
+    .footer-bottom{border-top:1px solid #ffffff1b;padding-top:20px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#8799b3;font-size:.82rem}
+    .back-top{position:fixed;right:20px;bottom:20px;z-index:80;width:46px;height:46px;border:0;border-radius:50%;background:var(--blue);color:white;font-size:1.2rem;box-shadow:0 8px 24px #1677ff55;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(10px);transition:.2s}
+    .back-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+    .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--navy);color:white;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow);z-index:200;opacity:0;pointer-events:none;transition:.25s;max-width:calc(100% - 32px);font-size:.9rem}
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    @keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes orbit{to{transform:rotate(360deg)}}
+    @keyframes pulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 15px #37d7ff70)}50%{transform:scale(1.06);filter:drop-shadow(0 0 32px #37d7ffcc)}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+    @media(max-width:980px){.nav-links{gap:13px}.nav-links a{font-size:.83rem}.nav-cta{display:none}.hero-grid{grid-template-columns:1fr .75fr;gap:20px}.hero-art{min-height:330px}.service-grid,.product-grid,.project-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:760px){.container{width:min(100% - 30px,600px)}.section{padding:70px 0}.topbar-inner{justify-content:center}.topbar .topbar-extra{display:none}.nav{height:70px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:white;border-bottom:1px solid var(--line);padding:18px 22px 22px;box-shadow:0 18px 24px #0b173014;align-items:stretch;flex-direction:column;gap:0}.nav-links.open{display:flex}.nav-links a{padding:12px 5px;font-size:.96rem;border-bottom:1px solid #edf1f6}.nav-links a:last-child{border-bottom:0}.hero{min-height:auto}.hero-grid{grid-template-columns:1fr;padding:65px 0 52px}.hero h1{font-size:clamp(2.65rem,11vw,4.1rem)}.hero-art{min-height:300px;margin-top:8px}.power-orb{width:270px}.bolt{font-size:6rem}.hero:after{width:300px;height:300px;right:-60px;top:45%}.tag-one{right:3%}.tag-two{left:3%}.trust-grid{grid-template-columns:1fr 1fr}.about-grid,.contact-grid{grid-template-columns:1fr;gap:30px}.about-visual{min-height:330px}.check-list{grid-template-columns:1fr 1fr}.service-grid,.product-grid,.project-grid,.value-grid{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.footer-grid{gap:28px}.cart-row{grid-template-columns:1fr auto;gap:9px}.cart-row .remove-btn{grid-column:1/-1;text-align:left}.cart-row input{width:62px}}
+    @media(max-width:480px){.brand-text strong{font-size:.82rem}.brand-text small{font-size:.62rem}.brand-mark{width:38px;height:38px}.hero-actions .btn{width:100%}.trust-grid{gap:15px}.trust-item{align-items:flex-start}.trust-item small{font-size:.72rem}.service-grid,.product-grid,.project-grid,.value-grid{grid-template-columns:1fr}.product-art{height:190px}.check-list{grid-template-columns:1fr}.contact-info,.form-card{padding:23px}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}.cart-checkout .btn{width:100%}}
+  </style>
+</head>
+<body id="top">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>⚡ Electrical &amp; Power Engineering • Lagos, Nigeria</span>
+      <span class="topbar-extra"><a href="mailto:amoniisreal5@gmail.com">amoniisreal5@gmail.com</a> &nbsp; | &nbsp; <a href="tel:+2349079153007">+234 907 915 3007</a></span>
+    </div>
+  </div>
+
+  <header>
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Amoni Isreal Engineering home">
+        <span class="brand-mark">AI</span>
+        <span class="brand-text"><strong>AMONI ISREAL ENGINEERING</strong><small>Power • Precision • Reliability</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#products">Products</a><a href="#projects">Experience</a><a href="#contact">Contact</a>
+      </div>
+      <a class="btn nav-cta btn-small" href="#contact">Request a Service ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Electrical &amp; Electronic Engineering</span>
+          <h1>Powering Reliable Connections. <span>Engineering a Brighter Future.</span></h1>
+          <p class="hero-copy">I'm AMONI ISREAL, an Electrical/Electronic Engineer (Power Option) based in Lagos, Nigeria. Explore practical engineering support, electrical maintenance, power solutions, and product enquiries tailored to your needs.</p>
+          <div class="hero-actions">
+            <a class="btn btn-cyan" href="#contact">Request a Service <span>↗</span></a>
+            <a class="btn btn-outline" href="#products">Explore Products <span>↓</span></a>
+          </div>
+          <div class="hero-meta"><span><b>⌖</b> Lagos State, Nigeria</span><span><b>✓</b> Safety-conscious approach</span><span><b>⚡</b> Power-focused expertise</span></div>
+        </div>
+        <div class="hero-art" aria-label="Animated electrical power illustration">
+          <div class="power-orb"><div class="bolt" aria-hidden="true">ϟ</div></div>
+          <div class="float-tag tag-one"><strong>POWER</strong>Smart solutions</div>
+          <div class="float-tag tag-two"><strong>ENGINEERING</strong>Built on precision</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item"><span class="trust-icon">⚡</span><div><strong>Power-focused</strong><small>Electrical engineering</small></div></div>
+        <div class="trust-item"><span class="trust-icon">⌕</span><div><strong>Practical Support</strong><small>Faults and maintenance</small></div></div>
+        <div class="trust-item"><span class="trust-icon">▦</span><div><strong>Product Enquiries</strong><small>Electrical components</small></div></div>
+        <div class="trust-item"><span class="trust-icon">✓</span><div><strong>Safety-conscious</strong><small>Quality-minded service</small></div></div>
+      </div>
+    </div>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual reveal" role="img" aria-label="Stylized electrical circuit illustration">
+          <div class="circuit" aria-hidden="true">⌁</div>
+          <div class="about-label"><strong>AMONI ISREAL</strong>Electrical/Electronic Engineer — Power Option<br><span style="color:#37d7ff">Lagos State, Nigeria</span></div>
+        </div>
+        <div class="about-content reveal">
+          <span class="eyebrow">About the Engineer</span>
+          <h2>Engineering with purpose, precision and safety.</h2>
+          <p>My name is <strong>AMONI ISREAL</strong>. I am an Electrical/Electronic Engineer with a Power Option background, based in Lagos State, Nigeria. My professional interests include electrical systems, power distribution, troubleshooting, maintenance, and the components that help keep electrical installations operating as intended.</p>
+          <p>I have previously worked at <strong>Gudy Foods</strong>. This work experience is part of my professional background; further details can be added as my portfolio develops.</p>
+          <p>My approach is grounded in clear communication, careful attention to detail, practical problem-solving, and respect for electrical safety. Whether you need to discuss a service requirement or enquire about a product, this website provides a straightforward way to get in touch.</p>
+          <ul class="check-list"><li>Power-oriented engineering</li><li>Safety-conscious mindset</li><li>Clear customer communication</li><li>Practical problem-solving</li></ul>
+          <a class="btn" href="#contact">Discuss Your Requirements ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="services">
+      <div class="container">
+        <div class="section-head center reveal"><span class="eyebrow">What I Can Help With</span><h2>Engineering services</h2><p class="section-intro">Explore the service categories below and send an enquiry to confirm scope, availability, location, and any technical requirements. Only request services that match your actual needs and qualifications.</p></div>
+        <div class="service-grid">
+          <article class="service-card reveal"><div class="service-icon">⌁</div><h3>Electrical Installation &amp; Wiring</h3><p>Enquiries about wiring, installation planning, fittings, and electrical system requirements for residential or commercial spaces.</p><a class="text-link service-request" href="#contact" data-service="Electrical Installation & Wiring">Request this service ↗</a></article>
+          <article class="service-card reveal"><div class="service-icon">⌕</div><h3>Fault Diagnosis &amp; Troubleshooting</h3><p>Discuss electrical faults, intermittent issues, unusual operation, and the information needed to assess a problem safely.</p><a class="text-link service-request" href="#contact" data-service="Fault Diagnosis & Troubleshooting">Request this service ↗</a></article>
+          <article class="service-card reveal"><div class="service-icon">⚙</div><h3>Electrical Maintenance &amp; Repairs</h3><p>Maintenance and repair enquiries for electrical installations, components, and equipment, subject to assessment.</p><a class="text-link service-request" href="#contact" data-service="Electrical Maintenance & Repairs">Request this service ↗</a></article>
+          <article class="service-card reveal"><div class="service-icon">▤</div><h3>Power Distribution &amp; Panels</h3><p>Enquiries about distribution boards, panel components, circuit protection, and power distribution requirements.</p><a class="text-link service-request" href="#contact" data-service="Power Distribution & Panels">Request this service ↗</a></article>
+          <article class="service-card reveal"><div class="service-icon">ϟ</div><h3>Power System Support</h3><p>Discuss power-related challenges, basic technical guidance, and practical requirements for electrical systems.</p><a class="text-link service-request" href="#contact" data-service="Power System Support">Request this service ↗</a></article>
+          <article class="service-card reveal"><div class="service-icon">☼</div><h3>Lighting &amp; Electrical Upgrades</h3><p>Enquiries about lighting products, energy-conscious upgrades, fittings, and suitable electrical accessories.</p><a class="text-link service-request" href="#contact" data-service="Lighting & Electrical Upgrades">Request this service ↗</a></article>
+          <article class="service-card reveal"><div class="service-icon">▦</div><h3>Components &amp; Accessories Supply</h3><p>Ask about electrical and electronic components, product specifications, quantities, and sourcing options.</p><a class="text-link service-request" href="#contact" data-service="Components & Accessories Supply">Request this service ↗</a></article>
+          <article class="service-card reveal"><div class="service-icon">⌂</div><h3>Commercial &amp; Industrial Support</h3><p>Discuss business or facility requirements so the scope, site conditions, and appropriate support can be reviewed.</p><a class="text-link service-request" href="#contact" data-service="Commercial & Industrial Support">Request this service ↗</a></article>
+          <article class="service-card reveal"><div class="service-icon">✉</div><h3>Technical Enquiry</h3><p>Not sure which category fits? Share the situation, location, and your main concern to start a conversation.</p><a class="text-link service-request" href="#contact" data-service="General Technical Enquiry">Make an enquiry ↗</a></article>
+        </div>
+        <div class="notice">Electrical work can present serious hazards. Installation, testing, repairs, and other regulated work should be handled by appropriately qualified personnel and in line with applicable safety requirements.</div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">Product Catalogue</span><h2>Electrical products &amp; components</h2><p class="section-intro">Browse example catalogue items and add them to your cart to prepare an enquiry. Product names, prices, images, and availability below are illustrative placeholders and must be updated to reflect your actual stock and selling prices.</p></div>
+        <div class="shop-toolbar">
+          <div class="filter-row" id="productFilters" aria-label="Filter products">
+            <button class="filter-btn active" data-filter="all">All products</button><button class="filter-btn" data-filter="cables">Cables &amp; wires</button><button class="filter-btn" data-filter="protection">Protection</button><button class="filter-btn" data-filter="lighting">Lighting</button><button class="filter-btn" data-filter="accessories">Accessories</button><button class="filter-btn" data-filter="electronics">Electronics</button>
+          </div>
+          <a class="cart-pill" href="#cart">🛒 Cart <span id="cartCount">0</span></a>
+        </div>
+        <div class="product-grid" id="productGrid">
+          <article class="product-card reveal" data-category="cables" data-id="cable" data-name="Electrical Cable (Sample)" data-price="8500"><div class="product-art"><span class="sample-tag">Example item</span>〰️</div><div class="product-body"><span class="product-category">Cables &amp; Wires</span><h3>Electrical Cable (Sample)</h3><p>Example cable listing. Confirm cable type, conductor size, length, and specification before ordering.</p><div class="price">₦8,500 <small style="font-size:.7rem;color:#718096">/ sample unit</small></div><label for="qty-cable" style="font-size:.82rem;font-weight:800">Quantity</label><input class="quantity" id="qty-cable" type="number" min="1" max="999" value="1" inputmode="numeric"><div class="product-actions"><button class="btn add-cart" type="button">Add to Cart</button><button class="btn btn-dark-outline buy-now" type="button">Buy via WhatsApp</button></div></div></article>
+          <article class="product-card reveal" data-category="accessories" data-id="socket" data-name="Switch & Socket Set (Sample)" data-price="4200"><div class="product-art"><span class="sample-tag">Example item</span>🔌</div><div class="product-body"><span class="product-category">Accessories</span><h3>Switch &amp; Socket Set (Sample)</h3><p>Example switch/socket listing. Confirm rating, style, compatibility, and quantity before purchase.</p><div class="price">₦4,200 <small style="font-size:.7rem;color:#718096">/ sample unit</small></div><label for="qty-socket" style="font-size:.82rem;font-weight:800">Quantity</label><input class="quantity" id="qty-socket" type="number" min="1" max="999" value="1" inputmode="numeric"><div class="product-actions"><button class="btn add-cart" type="button">Add to Cart</button><button class="btn btn-dark-outline buy-now" type="button">Buy via WhatsApp</button></div></div></article>
+          <article class="product-card reveal" data-category="protection" data-id="breaker" data-name="Circuit Breaker (Sample)" data-price="6500"><div class="product-art"><span class="sample-tag">Example item</span>▣</div><div class="product-body"><span class="product-category">Protection</span><h3>Circuit Breaker (Sample)</h3><p>Example protective device. The correct type and rating must be selected for the installation.</p><div class="price">₦6,500 <small style="font-size:.7rem;color:#718096">/ sample unit</small></div><label for="qty-breaker" style="font-size:.82rem;font-weight:800">Quantity</label><input class="quantity" id="qty-breaker" type="number" min="1" max="999" value="1" inputmode="numeric"><div class="product-actions"><button class="btn add-cart" type="button">Add to Cart</button><button class="btn btn-dark-outline buy-now" type="button">Buy via WhatsApp</button></div></div></article>
+          <article class="product-card reveal" data-category="lighting" data-id="lamp" data-name="LED Bulb (Sample)" data-price="1800"><div class="product-art"><span class="sample-tag">Example item</span>💡</div><div class="product-body"><span class="product-category">Lighting</span><h3>LED Bulb (Sample)</h3><p>Example lighting product. Confirm wattage, cap type, colour temperature, and stock.</p><div class="price">₦1,800 <small style="font-size:.7rem;color:#718096">/ sample unit</small></div><label for="qty-lamp" style="font-size:.82rem;font-weight:800">Quantity</label><input class="quantity" id="qty-lamp" type="number" min="1" max="999" value="1" inputmode="numeric"><div class="product-actions"><button class="btn add-cart" type="button">Add to Cart</button><button class="btn btn-dark-outline buy-now" type="button">Buy via WhatsApp</button></div></div></article>
+          <article class="product-card reveal" data-category="accessories" data-id="tape" data-name="Insulation Tape (Sample)" data-price="700"><div class="product-art"><span class="sample-tag">Example item</span>◉</div><div class="product-body"><span class="product-category">Accessories</span><h3>Insulation Tape (Sample)</h3><p>Example electrical accessory. Confirm material, dimensions, and suitability for the intended use.</p><div class="price">₦700 <small style="font-size:.7rem;color:#718096">/ sample unit</small></div><label for="qty-tape" style="font-size:.82rem;font-weight:800">Quantity</label><input class="quantity" id="qty-tape" type="number" min="1" max="999" value="1" inputmode="numeric"><div class="product-actions"><button class="btn add-cart" type="button">Add to Cart</button><button class="btn btn-dark-outline buy-now" type="button">Buy via WhatsApp</button></div></div></article>
+          <article class="product-card reveal" data-category="electronics" data-id="sensor" data-name="Electronic Component (Sample)" data-price="2500"><div class="product-art"><span class="sample-tag">Example item</span>⌘</div><div class="product-body"><span class="product-category">Electronics</span><h3>Electronic Component (Sample)</h3><p>Generic example listing. Replace with the exact component name, specifications, and part number.</p><div class="price">₦2,500 <small style="font-size:.7rem;color:#718096">/ sample unit</small></div><label for="qty-sensor" style="font-size:.82rem;font-weight:800">Quantity</label><input class="quantity" id="qty-sensor" type="number" min="1" max="999" value="1" inputmode="numeric"><div class="product-actions"><button class="btn add-cart" type="button">Add to Cart</button><button class="btn btn-dark-outline buy-now" type="button">Buy via WhatsApp</button></div></div></article>
+        </div>
+        <div class="cart-panel" id="cart">
+          <div class="cart-head"><h3>Your enquiry cart</h3><button class="remove-btn" id="clearCart" type="button">Clear cart</button></div>
+          <div id="cartItems"><p class="cart-empty">Your cart is empty. Add an example product above to prepare an order enquiry.</p></div>
+          <div class="cart-total"><span>Estimated subtotal</span><span id="cartTotal">₦0</span></div>
+          <div class="cart-checkout"><button class="btn" id="checkoutBtn" type="button">Prepare Order on WhatsApp ↗</button><a class="btn btn-dark-outline" href="#contact">Add customer details</a></div>
+          <p class="form-note">Prices are examples, not confirmed offers. The subtotal excludes delivery, taxes, and any unconfirmed charges. Your order is not placed until details and availability are confirmed directly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="projects">
+      <div class="container">
+        <div class="section-head center reveal"><span class="eyebrow">Professional Background</span><h2>Experience &amp; project portfolio</h2><p class="section-intro">Use this section to add verified projects, photographs, locations, and details as your portfolio grows. The cards below are clearly marked as editable examples, not claims of completed work.</p></div>
+        <div class="project-grid">
+          <article class="project-card reveal"><div class="project-art">⚡</div><div class="project-body"><small>Portfolio placeholder</small><h3>Electrical Installation Example</h3><p>Replace this sample with a verified installation project, including your role, scope, and location where appropriate.</p></div></article>
+          <article class="project-card reveal"><div class="project-art">⚙</div><div class="project-body"><small>Portfolio placeholder</small><h3>Maintenance Example</h3><p>Add a real maintenance or troubleshooting case and describe the problem, your responsibilities, and the outcome.</p></div></article>
+          <article class="project-card reveal"><div class="project-art">▤</div><div class="project-body"><small>Work experience</small><h3>Gudy Foods</h3><p>Previous work experience at Gudy Foods. Add your job title, responsibilities, and dates only when you are ready to provide the accurate details.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="values">
+      <div class="container">
+        <div class="section-head center reveal"><span class="eyebrow">Our Approach</span><h2>What you can expect</h2><p class="section-intro">The principles behind the AMONI ISREAL ENGINEERING brand.</p></div>
+        <div class="value-grid">
+          <article class="value-card reveal"><div class="service-icon">✓</div><h3>Safety-conscious</h3><p>Electrical risks deserve careful assessment, suitable protective measures, and qualified handling.</p></article>
+          <article class="value-card reveal"><div class="service-icon">◎</div><h3>Attention to Detail</h3><p>Clear specifications and accurate information help make service discussions more productive.</p></article>
+          <article class="value-card reveal"><div class="service-icon">↔</div><h3>Clear Communication</h3><p>Customers can explain their needs and confirm scope, costs, and next steps before proceeding.</p></article>
+          <article class="value-card reveal"><div class="service-icon">⚙</div><h3>Practical Solutions</h3><p>Focus on understanding the requirement and discussing an appropriate, realistic way forward.</p></article>
+          <article class="value-card reveal"><div class="service-icon">♡</div><h3>Customer Focus</h3><p>Make it straightforward to ask questions, compare requirements, and request product information.</p></article>
+          <article class="value-card reveal"><div class="service-icon">▤</div><h3>Professional Conduct</h3><p>Work toward respectful communication, honest expectations, and responsible service delivery.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="contact">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">Get in Touch</span><h2>Tell me what you need</h2><p class="section-intro">Share a service requirement or product enquiry. Choose WhatsApp or email to open a prepared message that you can review and send yourself.</p></div>
+        <div class="contact-grid">
+          <aside class="contact-info reveal">
+            <span class="eyebrow">Contact Details</span><h3>AMONI ISREAL ENGINEERING</h3><p>Electrical/Electronic Engineer — Power Option. Available for enquiries relating to electrical services, power-focused support, and product requirements in Lagos State, Nigeria.</p>
+            <div class="contact-detail"><span class="ico">✉</span><div><small>Email</small><a href="mailto:amoniisreal5@gmail.com">amoniisreal5@gmail.com</a></div></div>
+            <div class="contact-detail"><span class="ico">☎</span><div><small>Phone</small><a href="tel:+2349079153007">+234 907 915 3007</a></div></div>
+            <div class="contact-detail"><span class="ico">◉</span><div><small>WhatsApp</small><a href="https://wa.me/2349079153007" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div>
+            <div class="contact-detail"><span class="ico">⌖</span><div><small>Location</small><strong>Lagos State, Nigeria</strong></div></div>
+            <div class="contact-detail"><span class="ico">◷</span><div><small>Business hours</small><strong>By appointment — please enquire</strong></div></div>
+            <div class="contact-actions"><a class="btn btn-cyan" href="https://wa.me/2349079153007" target="_blank" rel="noopener">Start WhatsApp Chat ↗</a><a class="btn btn-outline" href="mailto:amoniisreal5@gmail.com">Send an Email ↗</a></div>
+          </aside>
+          <div class="form-card reveal">
+            <h3>Customer enquiry form</h3><p>Complete the details below, then choose WhatsApp or email. Nothing is submitted automatically until you send the prepared message.</p>
+            <form id="enquiryForm">
+              <div class="form-grid">
+                <div class="field"><label for="fullName">Full name *</label><input id="fullName" name="fullName" autocomplete="name" required placeholder="Your full name"></div>
+                <div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+                <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+234..."></div>
+                <div class="field"><label for="company">Company name (optional)</label><input id="company" name="company" autocomplete="organization" placeholder="Your company"></div>
+                <div class="field"><label for="interest">Service or product *</label><select id="interest" name="interest" required><option value="">Select an option</option><option>Electrical Installation & Wiring</option><option>Fault Diagnosis & Troubleshooting</option><option>Electrical Maintenance & Repairs</option><option>Power Distribution & Panels</option><option>Power System Support</option><option>Lighting & Electrical Upgrades</option><option>Components & Accessories Supply</option><option>Commercial & Industrial Support</option><option>Product order</option><option>General enquiry</option></select></div>
+                <div class="field"><label for="quantity">Quantity (if applicable)</label><input id="quantity" name="quantity" type="number" min="1" max="99999" placeholder="e.g. 5"></div>
+                <div class="field full"><label for="location">Location or delivery address</label><input id="location" name="location" autocomplete="street-address" placeholder="Area / city (avoid sharing unnecessary private details)"></div>
+                <div class="field"><label for="contactMethod">Preferred contact method</label><select id="contactMethod" name="contactMethod"><option>WhatsApp</option><option>Email</option><option>Phone call</option></select></div>
+                <div class="field"><label for="delivery">Fulfilment preference</label><select id="delivery" name="delivery"><option>To be discussed</option><option>Delivery enquiry</option><option>Collection enquiry</option><option>Service visit enquiry</option></select></div>
+                <div class="field full"><label for="message">Message / requirements *</label><textarea id="message" name="message" required placeholder="Describe the service, product, specifications, or question..."></textarea></div>
+              </div>
+              <label class="consent"><input type="checkbox" id="consent" required><span>I agree that the details I enter may be included in a message I choose to send to AMONI ISREAL ENGINEERING for the purpose of responding to my enquiry. *</span></label>
+              <div class="form-actions"><button class="btn" type="submit">Continue with WhatsApp ↗</button><button class="btn btn-dark-outline" type="button" id="emailEnquiry">Continue with Email ✉</button></div>
+              <p class="form-note">This standalone website does not save your form to a database. Review the message in WhatsApp or your email app and press Send to submit it. Do not include passwords, payment card details, or sensitive personal information.</p>
+              <div class="map-placeholder"><div><strong>Business location</strong>Lagos State, Nigeria<br><small>Add your confirmed business address or map embed here when ready.</small></div></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="#home"><span class="brand-mark">AI</span><span class="brand-text"><strong>AMONI ISREAL ENGINEERING</strong><small>Power • Precision • Reliability</small></span></a>
+          <p>Electrical/Electronic Engineer (Power Option) based in Lagos, Nigeria. Explore engineering service enquiries, power-focused support, and electrical product information.</p>
+          <a class="text-link" style="color:var(--cyan)" href="https://wa.me/2349079153007" target="_blank" rel="noopener">Connect on WhatsApp ↗</a>
+        </div>
+        <div><h3>Quick Links</h3><div class="footer-links"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#products">Products</a><a href="#projects">Experience</a><a href="#contact">Contact</a></div></div>
+        <div><h3>Service Categories</h3><div class="footer-links"><a href="#services">Installation &amp; Wiring</a><a href="#services">Maintenance &amp; Repairs</a><a href="#services">Power Distribution</a><a href="#services">Lighting &amp; Upgrades</a><a href="#products">Electrical Components</a></div></div>
+        <div><h3>Contact</h3><div class="footer-links"><a href="mailto:amoniisreal5@gmail.com">amoniisreal5@gmail.com</a><a href="tel:+2349079153007">+234 907 915 3007</a><a href="https://wa.me/2349079153007" target="_blank" rel="noopener">WhatsApp</a><span>Lagos State, Nigeria</span></div><h3 style="margin-top:23px">Social links</h3><div class="footer-links"><a href="#contact" aria-label="Add your Instagram link">Instagram — add link</a><a href="#contact" aria-label="Add your LinkedIn link">LinkedIn — add link</a></div></div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> AMONI ISREAL ENGINEERING. All rights reserved.</span><span>Privacy: enquiry details are only included in a message you choose to send.</span><a href="#top">Back to top ↑</a></div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    "use strict";
+    const WHATSAPP_NUMBER = "2349079153007";
+    const BUSINESS_EMAIL = "amoniisreal5@gmail.com";
+    const money = amount => new Intl.NumberFormat("en-NG", {style:"currency",currency:"NGN",maximumFractionDigits:0}).format(amount);
+    const $ = (selector, root=document) => root.querySelector(selector);
+    const $$ = (selector, root=document) => Array.from(root.querySelectorAll(selector));
+    const cart = new Map();
+    let toastTimer;
+
+    function showToast(message) {
+      const toast = $("#toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 3000);
+    }
+    function safeQuantity(value) {
+      const number = Number.parseInt(value, 10);
+      return Number.isFinite(number) ? Math.min(999, Math.max(1, number)) : 1;
+    }
+    function productFromCard(card) {
+      return {id:card.dataset.id, name:card.dataset.name, price:Number(card.dataset.price)||0};
+    }
+    function addToCart(card, quantity) {
+      const product = productFromCard(card);
+      const existing = cart.get(product.id);
+      product.quantity = Math.min(999, (existing ? existing.quantity : 0) + safeQuantity(quantity));
+      cart.set(product.id, product);
+      renderCart();
+      showToast(product.name + " added to your cart.");
+    }
+    function renderCart() {
+      const host = $("#cartItems");
+      const items = Array.from(cart.values());
+      $("#cartCount").textContent = items.reduce((sum,item)=>sum+item.quantity,0);
+      const total = items.reduce((sum,item)=>sum+item.price*item.quantity,0);
+      $("#cartTotal").textContent = money(total);
+      if (!items.length) {
+        host.innerHTML = '<p class="cart-empty">Your cart is empty. Add an example product above to prepare an order enquiry.</p>';
+        return;
+      }
+      host.replaceChildren();
+      items.forEach(item => {
+        const row = document.createElement("div");
+        row.className = "cart-row";
+        const details = document.createElement("div");
+        const name = document.createElement("strong");
+        name.textContent = item.name;
+        const sub = document.createElement("small");
+        sub.textContent = money(item.price) + " each · Line total: " + money(item.price*item.quantity);
+        details.append(name,sub);
+        const quantity = document.createElement("input");
+        quantity.type = "number"; quantity.min = "1"; quantity.max = "999"; quantity.value = item.quantity;
+        quantity.setAttribute("aria-label","Quantity for " + item.name);
+        quantity.addEventListener("change", () => {
+          item.quantity = safeQuantity(quantity.value);
+          cart.set(item.id,item); renderCart();
+        });
+        const remove = document.createElement("button");
+        remove.type = "button"; remove.className = "remove-btn"; remove.textContent = "Remove";
+        remove.addEventListener("click", () => {cart.delete(item.id);renderCart();showToast("Item removed.");});
+        row.append(details,quantity,remove); host.append(row);
+      });
+    }
+    function cartMessage(customer={}) {
+      const items = Array.from(cart.values());
+      const total = items.reduce((sum,item)=>sum+item.price*item.quantity,0);
+      const lines = items.map(item => `- ${item.name} × ${item.quantity} = ${money(item.price*item.quantity)} (example price)`);
+      return [
+        "Hello AMONI ISREAL ENGINEERING, I would like to enquire about this order.",
+        "",
+        "ORDER ENQUIRY:",
+        ...lines,
+        `Estimated example subtotal: ${money(total)}`,
+        "",
+        "CUSTOMER DETAILS:",
+        `Name: ${customer.name || "To be provided"}`,
+        `Phone: ${customer.phone || "To be provided"}`,
+        `Email: ${customer.email || "To be provided"}`,
+        `Location / delivery: ${customer.location || "To be discussed"}`,
+        `Fulfilment preference: ${customer.delivery || "To be discussed"}`,
+        "",
+        "Please confirm actual prices, specifications, availability, delivery charges, and next steps. I understand these displayed prices are examples and this message is an enquiry, not a completed order."
+      ].join("\n");
+    }
+    function openWhatsApp(message) {
+      const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+    function readForm() {
+      const form = $("#enquiryForm");
+      if (!form.reportValidity()) return null;
+      if (!$("#consent").checked) { showToast("Please confirm the enquiry consent checkbox."); return null; }
+      const data = new FormData(form);
+      return {
+        name:String(data.get("fullName")||"").trim(),
+        email:String(data.get("email")||"").trim(),
+        phone:String(data.get("phone")||"").trim(),
+        company:String(data.get("company")||"").trim(),
+        interest:String(data.get("interest")||"").trim(),
+        quantity:String(data.get("quantity")||"").trim(),
+        location:String(data.get("location")||"").trim(),
+        contactMethod:String(data.get("contactMethod")||"").trim(),
+        delivery:String(data.get("delivery")||"").trim(),
+        message:String(data.get("message")||"").trim()
+      };
+    }
+    function enquiryMessage(data) {
+      return [
+        "Hello AMONI ISREAL ENGINEERING, I am making an enquiry through your website.",
+        "",
+        "CUSTOMER DETAILS",
+        `Full name: ${data.name}`,
+        `Email: ${data.email}`,
+        `Phone: ${data.phone}`,
+        `Company: ${data.company || "Not provided"}`,
+        "",
+        "ENQUIRY",
+        `Service / product: ${data.interest}`,
+        `Quantity: ${data.quantity || "Not applicable / not provided"}`,
+        `Location / delivery address: ${data.location || "Not provided"}`,
+        `Preferred contact: ${data.contactMethod}`,
+        `Fulfilment preference: ${data.delivery}`,
+        `Message: ${data.message}`,
+        "",
+        "Please let me know the next steps. This is an enquiry, not a confirmed booking or purchase."
+      ].join("\n");
+    }
+
+    // Mobile navigation
+    const menuToggle = $("#menuToggle");
+    const navLinks = $("#navLinks");
+    menuToggle.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+      menuToggle.textContent = open ? "×" : "☰";
+    });
+    $$("#navLinks a").forEach(link => link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded","false");
+      menuToggle.setAttribute("aria-label","Open navigation menu");
+      menuToggle.textContent = "☰";
+    }));
+
+    // Product filters and cart controls
+    $$(".filter-btn").forEach(button => button.addEventListener("click", () => {
+      $$(".filter-btn").forEach(item=>item.classList.toggle("active",item===button));
+      const filter = button.dataset.filter;
+      $$(".product-card").forEach(card => {
+        card.hidden = filter !== "all" && card.dataset.category !== filter;
+      });
+    }));
+    $$(".add-cart").forEach(button => button.addEventListener("click", () => {
+      const card = button.closest(".product-card");
+      addToCart(card, $(".quantity",card).value);
+    }));
+    $$(".buy-now").forEach(button => button.addEventListener("click", () => {
+      const card = button.closest(".product-card");
+      const product = productFromCard(card);
+      product.quantity = safeQuantity($(".quantity",card).value);
+      const message = [
+        "Hello AMONI ISREAL ENGINEERING, I would like to enquire about this product:",
+        `${product.name}`,
+        `Quantity: ${product.quantity}`,
+        `Example unit price: ${money(product.price)}`,
+        `Example line subtotal: ${money(product.price*product.quantity)}`,
+        "",
+        "Please confirm the actual price, specifications, availability, and delivery options. I understand this is an enquiry, not a completed order."
+      ].join("\n");
+      openWhatsApp(message);
+    }));
+    $("#clearCart").addEventListener("click", () => {cart.clear();renderCart();showToast("Cart cleared.");});
+    $("#checkoutBtn").addEventListener("click", () => {
+      if (!cart.size) {showToast("Add at least one product before preparing an order enquiry.");return;}
+      const formData = readOptionalCustomerDetails();
+      openWhatsApp(cartMessage(formData));
+    });
+    function readOptionalCustomerDetails() {
+      return {
+        name:$("#fullName").value.trim(),
+        phone:$("#phone").value.trim(),
+        email:$("#email").value.trim(),
+        location:$("#location").value.trim(),
+        delivery:$("#delivery").value.trim()
+      };
+    }
+
+    // Service links preselect the relevant enquiry type
+    $$(".service-request").forEach(link => link.addEventListener("click", () => {
+      $("#interest").value = link.dataset.service;
+    }));
+
+    // Customer enquiry routes: user reviews and sends the message themselves
+    $("#enquiryForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const data = readForm();
+      if (!data) return;
+      openWhatsApp(enquiryMessage(data));
+      showToast("WhatsApp opened with your enquiry ready to review and send.");
+    });
+    $("#emailEnquiry").addEventListener("click", () => {
+      const data = readForm();
+      if (!data) return;
+      const subject = "Website enquiry: " + data.interest;
+      const body = enquiryMessage(data);
+      window.location.href = "mailto:" + BUSINESS_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    });
+
+    // Current year and back-to-top button
+    $("#year").textContent = new Date().getFullYear();
+    const backTop = $("#backTop");
+    window.addEventListener("scroll", () => backTop.classList.toggle("show", window.scrollY > 500), {passive:true});
+    backTop.addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
+
+    // Reveal animations with a graceful fallback if IntersectionObserver is unavailable
+    const revealItems = $$(".reveal");
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {entry.target.classList.add("visible");observer.unobserve(entry.target);}
+        });
+      }, {threshold:0.12});
+      revealItems.forEach(item=>observer.observe(item));
+    } else {
+      revealItems.forEach(item=>item.classList.add("visible"));
+    }
+
+    // Highlight the navigation link for the section currently in view
+    if ("IntersectionObserver" in window) {
+      const sections = $$("main section[id]");
+      const sectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            $$("#navLinks a").forEach(link => link.classList.toggle("active",link.getAttribute("href")==="#"+entry.target.id));
+          }
+        });
+      }, {rootMargin:"-30% 0px -60% 0px"});
+      sections.forEach(section=>sectionObserver.observe(section));
+    }
+    renderCart();
+  </script>
+</body>
+</html>
